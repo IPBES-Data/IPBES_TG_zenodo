@@ -20,10 +20,10 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render index.qmd to HTML and GFM
+      - name: Render how_to_upload_and_download_from_zenodo.qmd to HTML
         run: |
-          quarto render index.qmd --to html --output index.html
-          # quarto render index.qmd --to gfm  --output README.md
+          quarto render how_to_upload_and_download_from_zenodo.qmd --to html --output index.html
+          # quarto render how_to_upload_and_download_from_zenodo.qmd --to gfm  --output README.md
 
       # - name: Commit updated README.md to default branch
       #   uses: stefanzweifel/git-auto-commit-action@v5
