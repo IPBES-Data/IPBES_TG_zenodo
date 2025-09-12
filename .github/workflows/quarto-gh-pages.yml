@@ -20,6 +20,15 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("knitr","rmarkdown","htmltools"))'
+
       - name: Render how_to_upload_and_download_from_zenodo.qmd to HTML
         run: |
           quarto render how_to_upload_and_download_from_zenodo.qmd --to html --output index.html
