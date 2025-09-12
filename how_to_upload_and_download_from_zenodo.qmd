@@ -67,12 +67,18 @@ format:
         code-summary: 'Show the code'
 ---
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
+
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| label: logo
+#| echo: false
+
 htmltools::img(src = knitr::image_uri("C:/Users/jkumagai/Documents/IPBES/R/Geoinformatics/Technical Guidelines Series/Zenodo/figures/logo2.png"), 
                alt = 'logo', 
                 style = 'position:absolute; top:0; right:0; padding:10px; width: 400px; height: 100px;') 
