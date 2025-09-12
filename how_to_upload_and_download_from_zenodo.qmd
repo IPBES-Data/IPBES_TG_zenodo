@@ -71,13 +71,15 @@ format:
 #| label: setup
 #| include: false
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 library(dplyr)
 ```
 
 ```{r}
 #| label: logo
 #| echo: false
+#| eval: false
+
 
 htmltools::img(src = knitr::image_uri("C:/Users/jkumagai/Documents/IPBES/R/Geoinformatics/Technical Guidelines Series/Zenodo/figures/logo2.png"), 
                alt = 'logo', 
@@ -276,7 +278,10 @@ Within R, there's a handy function called [`download_zenodo`](https://rdrr.io/gi
 
 To illustrate this in R, all of the files associated with the Zenodo repository [IPBES regions and subregions](https://doi.org/10.5281/zenodo.3923633) can be downloaded programmatically at once with the following code:
 
-```{r, messages = F, warning = F}
+```{r}
+#| label: download_zenodo_ipbes_regions
+#| message: false
+#| warning: false
 # Install the package inborutis and load into library
 library(inborutils)
 
@@ -288,7 +293,10 @@ list.files(local_path)
 
 The shapefile for the ipbes regions and subregions is within the zipped folder called "ipbes_regions_subregions_shape_1.1.zip". Once these files are downloaded, one can unzip the shapefile, call it into memory, and begin to use it as shown here:
 
-```{r, messages = F, warning = F}
+```{r}
+#| label: unzip_read_plot_mexico
+#| message: false
+#| warning: false
 # Install these packages and then load them into library
 library(magrittr)             # Package for the pipe function 
 library(sf)                   # Package to read the vector data
