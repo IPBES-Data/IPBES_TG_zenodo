@@ -32,7 +32,7 @@ while IFS= read -r f; do
   if grep -Ei 'knitr::opts_chunk\$set\([^)]*eval[[:space:]]*=[[:space:]]*(false|no|0|f)\b' "$f" >/dev/null; then file_eval_false=1; fi
   if [ "$file_eval_false" -ne 1 ]; then all_eval_false=0; break; fi
 done < "$tmp_files"
-if [ "$all_eval_false" -eq 1 ]; then echo knitr > R.pkgs; rm -f "$tmp_files"; exit 0; fi
+if [ "$all_eval_false" -eq 1 ]; then { echo knitr; echo rmarkdown; } | sort -u > R.pkgs; rm -f "$tmp_files"; exit 0; fi
 pkg_tmp=".detect_r_pkgs_pkgs.$$"
 while IFS= read -r f; do
   [ -f "$f" ] || continue
@@ -46,7 +46,6 @@ while IFS= read -r f; do
 done < "$tmp_files" | sed -E 's/::.*$//' >> "$pkg_tmp" || true
 awk 'NF{print $0}' "$pkg_tmp" | sort -u > "$pkg_tmp.unique"
 grep -Ev '^(base|stats|utils|graphics|grDevices|methods|datasets)$' "$pkg_tmp.unique" | awk 'length($0)>=2' > "$pkg_tmp.filtered" || true
-{ echo knitr; cat "$pkg_tmp.filtered"; } | awk 'NF{print $0}' | sort -u > R.pkgs
+{ echo knitr; echo rmarkdown; cat "$pkg_tmp.filtered"; } | awk 'NF{print $0}' | sort -u > R.pkgs
 rm -f "$tmp_files" "$pkg_tmp" "$pkg_tmp.unique" "$pkg_tmp.filtered"
 exit 0
-
