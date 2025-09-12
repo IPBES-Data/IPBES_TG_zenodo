@@ -72,7 +72,6 @@ format:
 #| include: false
 
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
-library(dplyr)
 ```
 
 ```{r}
@@ -282,6 +281,9 @@ To illustrate this in R, all of the files associated with the Zenodo repository 
 #| label: download_zenodo_ipbes_regions
 #| message: false
 #| warning: false
+
+library(dplyr)
+
 # Install the package inborutis and load into library
 library(inborutils)
 
