@@ -55,6 +55,7 @@ jobs:
           rm -rf public
           mkdir -p public
           cp index.html public/
+          if [ -f metadata_qmd.yaml ]; then cp metadata_qmd.yaml public/; fi
           if [ -f R.pkgs ]; then cp R.pkgs public/; fi
 
       - name: Publish to gh-pages
