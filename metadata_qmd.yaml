@@ -1,0 +1,68 @@
+---
+title: Technical Guideline Series
+subtitle: Part 6 - How to Upload to and Download from Zenodo
+date: today
+author:
+  - name: 
+        family: Krug
+        given: Rainer M.
+    id: rmk
+    orcid: 0000-0002-7490-0066
+    email: Rainer.Krug@Senckenberg.de, Rainer@Krugs.de
+    affiliation: 
+      - name: Senckenberg
+        city: Frankfurt (Main)
+        url: https://www.senckenberg.de/en/institutes/sbik-f/
+    roles: [author, editor]
+  - name: 
+        family: Niamir
+        given: Aidin 
+    id: an
+    orcid: 0000-0003-4511-3407
+    email: Aidin.Niamir@Senckenberg.de
+    affiliation: 
+      - name: Senckenberg
+        city: Frankfurt (Main)
+        url: https://www.senckenberg.de/en/institutes/sbik-f/
+    roles: [editor]
+  - name:
+        family: Kumagai
+        given: Joy
+    id: jkumagai
+    orcid: TO BE ADDED
+    email: TO BE ADDED
+    affiliation:
+      - name: Senckenberg
+        city: Frankfurt (Main)
+        url: https://www.senckenberg.de/en/institutes/sbik-f/
+    roles: [author]
+  - name:
+        family: Omare
+        given: Benedict
+    id: bomare-rev
+    orcid: TO BE ADDED
+    email: TO BE ADDED
+    affiliation:
+      - name: Senckenberg
+        city: Frankfurt (Main)
+        url: https://www.senckenberg.de/en/institutes/sbik-f/
+    roles: [reviewer]
+abstract: TO BE ADDED
+keyword: "literature search, snowball search, citation network"
+license: "CC BY"
+citation:
+  type: report
+  container-title: " IPBES Technical Guidelines: Part 6 - How to Upload to and Download from Zenodo"
+  doi: 10.5281/zenodo.6834336
+doi: 10.5281/zenodo.6834336
+version: 1.1
+
+format:
+    html:
+        toc: true
+        toc-depth: 4
+        toc_expand: true
+        embed-resources: true
+        code-fold: false
+        code-summary: 'Show the code'
+---
